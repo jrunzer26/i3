@@ -1,3 +1,6 @@
 # i3
-Run i3-gaps.sh first
-Run install to setup configuration after
+## [i3wm](https://i3wm.org/)
+
+### Installation on Linux Mint
+1. Run i3-gaps.sh
+2. Run install to setup configuration
