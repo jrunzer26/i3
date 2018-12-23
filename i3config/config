@@ -11,7 +11,8 @@
 
 set $mod Mod4
 set $alt Mod1
-set $wallpaper ~/Wallpapers/solarized-mountains-light.png
+set $wallpaper ~/Wallpapers/isaac-wallpaper.png
+set $background ~/Wallpapers/isaac-background.png
 # find the audio card by running amixer command and finding the master card number
 set $audioCard 0
 
@@ -27,7 +28,12 @@ set $bigfor dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/m
 #disable tapclick
 exec --no-startup-id /usr/bin/xinput set-prop "ETPS/2 Elantech Touchpad" "Synaptics Tap Action" 0
 
-exec --no-startup-id i3-msg 'workspace 4:Mail; exec firefox hotmail.com'
+#set the background
+exec --no-startup-id feh --bg-scale $background
+exec --no-startup-id compton
+
+exec --no-startup-id i3-msg 'workspace 4:Mail; exec firefox hotmail.com https://mail.google.com/mail/u/0/#inbox'
+exec --no-startup-id i3-msg 'workspace 10:Code; exec code'
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 #font pango:monospace 11
@@ -53,11 +59,11 @@ for_window [instance="math"] floating enable
 for_window [instance="math"] resize set 800 300
 for_window [instance="math"] move scratchpad
 for_window [instance="math"] border pixel 5
-exec --no-startup-id i3-sensible-terminal -n math -f mono:pixelsize=24 -e gcalccmd
+#exec --no-startup-id i3-sensible-terminal -n math -f mono:pixelsize=24 -e gcalccmd
 
 
-bindsym $mod+a [instance="math"] scratchpad show; [instance="math"] move position center
-#bindsym $mod+a exec i3-sensible-terminal -n math -f mono:pixelsize=24 -e gcalccmd
+#bindsym $mod+a [instance="math"] scratchpad show; [instance="math"] move position center
+bindsym $mod+a exec i3-sensible-terminal -n math -f mono:pixelsize=24 -e gcalccmd
 
 
 bindsym $mod+r exec i3-sensible-terminal -e ranger
@@ -150,28 +156,28 @@ bindsym $mod+$alt+0 move container to workspace number 10
 
 #for the number pad
 # switch to workspace
-bindsym $mod+KP_1 workspace 1
-bindsym $mod+KP_2 workspace 2
-bindsym $mod+KP_3 workspace 3
-bindsym $mod+KP_4 workspace 4
-bindsym $mod+KP_5 workspace 5
-bindsym $mod+KP_6 workspace 6
-bindsym $mod+KP_7 workspace 7
-bindsym $mod+KP_8 workspace 8
-bindsym $mod+KP_9 workspace 9
-bindsym $mod+KP_0 workspace 10
+bindsym $mod+KP_1 workspace number 1
+bindsym $mod+KP_2 workspace number 2
+bindsym $mod+KP_3 workspace number 3
+bindsym $mod+KP_4 workspace number 4
+bindsym $mod+KP_5 workspace number 5
+bindsym $mod+KP_6 workspace number 6
+bindsym $mod+KP_7 workspace number 7
+bindsym $mod+KP_8 workspace number 8
+bindsym $mod+KP_9 workspace number 9
+bindsym $mod+KP_0 workspace number 10
 
 # move focused container to workspace
-bindsym $mod+$alt+KP_1 move container to workspace 1
-bindsym $mod+$alt+KP_2 move container to workspace 2
-bindsym $mod+$alt+KP_3 move container to workspace 3
-bindsym $mod+$alt+KP_4 move container to workspace 4
-bindsym $mod+$alt+KP_5 move container to workspace 5
-bindsym $mod+$alt+KP_6 move container to workspace 6
-bindsym $mod+$alt+KP_7 move container to workspace 7
-bindsym $mod+$alt+KP_8 move container to workspace 8
-bindsym $mod+$alt+KP_9 move container to workspace 9
-bindsym $mod+$alt+KP_0 move container to workspace 10
+bindsym $mod+$alt+KP_1 move container to workspace number 1
+bindsym $mod+$alt+KP_2 move container to workspace number 2
+bindsym $mod+$alt+KP_3 move container to workspace number 3
+bindsym $mod+$alt+KP_4 move container to workspace number 4
+bindsym $mod+$alt+KP_5 move container to workspace number 5
+bindsym $mod+$alt+KP_6 move container to workspace number 6
+bindsym $mod+$alt+KP_7 move container to workspace number 7
+bindsym $mod+$alt+KP_8 move container to workspace number 8
+bindsym $mod+$alt+KP_9 move container to workspace number 9
+bindsym $mod+$alt+KP_0 move container to workspace number 10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -229,7 +235,7 @@ bindsym $mod+b exec firefox
 
 #music shortcuts
 bindsym $mod+Shiftm exec $music; workspace 5:Music;
-bindsym $mod+m workspace 5
+bindsym $mod+m workspace number 5
 for_window [title="Spotify"] move container 5
 bindsym $mod+greater exec $next
 bindsym $mod+Shift+greater exec $next
