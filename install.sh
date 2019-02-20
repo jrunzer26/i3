@@ -37,6 +37,13 @@ echo 'Finished installing feh & compton'
 
 echo 'might need to install pcmanfm'
 
+echo 'Install htop'
+sudo apt-get install --yes htop
+echo 'Finished installing htop'
+
+echo 'Install npm'
+sudo apt-get install --yes npm
+
 echo '*** Finished installing software ***'
 
 
@@ -50,6 +57,9 @@ mkdir ~/.config/i3
 mkdir ~/.config/i3status
 ln i3status/config ~/.config/i3status/config
 ln i3config/config ~/.config/i3/config
+mkdir ~/Wallpapers
+ln wallpapers/isaac-wallpaper.png ~/Wallpapers/isaac-wallpaper.png
+ln wallpapers/isaac-background.png ~/Wallpapers/isaac-background.png
 
 echo 'Linking vim config'
 ln vimconfig/vimrc ~/.vimrc
