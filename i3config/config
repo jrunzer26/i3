@@ -262,6 +262,10 @@ bindsym $mod+less exec $prev
 bindsym $mod+previous exec $prev
 bindsym $mod+slash exec $pause
 
+# print screen (requires shutter)
+bindsym Print exec --no-startup-id shutter -s
+for_window [class="Shutter" instance="shutter"] floating enable
+
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (Shift+r) reboot, (Shift+s) shutdown
 mode "$mode_system"{
