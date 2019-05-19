@@ -44,6 +44,9 @@ echo 'Finished installing htop'
 echo 'Install npm'
 sudo apt-get install --yes npm
 
+echo 'Install shutter'
+sudo apt-get install --yes shutter
+
 echo '*** Finished installing software ***'
 
 
