@@ -44,7 +44,7 @@ for_window [title=".*To-Do.*"] move to workspace "1:ToDo"
 for_window [title=".*WhatsApp.*"] move to workspace "2:Chat"
 for_window [title=".*Messenger.*"] move to workspace "2:Chat"
 for_window [title=".*Google\ -.*"] move to workspace "3:Google"
-for_window [title=".*Mail.*"] move to workspace "4:Mail"
+for_window [title=".*Mail.*"] move to workspace "4:Email"
 
 
 # Font for window titles. Will also be used by the bar unless a different font
